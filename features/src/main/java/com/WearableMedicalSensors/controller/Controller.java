@@ -1,4 +1,4 @@
-package com.WearableMedicalSensors.controller;
+package com.wearablemedicalsensors.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
