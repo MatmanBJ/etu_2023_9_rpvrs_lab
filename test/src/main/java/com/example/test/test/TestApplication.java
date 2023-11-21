@@ -1,0 +1,16 @@
+package com.example.test.test;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TestApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TestApplication.class, args);
+		Test test = new Test();
+		test.setId(5);
+		test.getId();
+	}
+
+}
