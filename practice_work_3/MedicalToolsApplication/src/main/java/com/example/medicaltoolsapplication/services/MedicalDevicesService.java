@@ -18,22 +18,22 @@ public class MedicalDevicesService {
 
 
     public MedicalDevices findById(int id, Locale locale) {
-        var smartHouse = repository.findById(id);
+        var medicalDevices = repository.findById(id);
 
-        if(smartHouse.isEmpty()){
+        if(medicalDevices.isEmpty()){
             throw new IllegalArgumentException(
                     String.format(messages.getMessage("medical.search.error.message", null, locale))
             );
         }
 
-        return smartHouse.get().withComment(config.getProperty());
+        return medicalDevices.get().withComment(config.getProperty());
     }
 
-    public MedicalDevices createMedicalDevices(MedicalDevices medicalDevices) {
+    public MedicalDevices createMedicalDevices(MedicalDevices medicalDevices, Locale locale) {
         return repository.save(medicalDevices).withComment(config.getProperty());
     }
 
-    public MedicalDevices updateMedicalDevices(int id, MedicalDevices updateMedicalDevices) {
+    public MedicalDevices updateMedicalDevices(int id, MedicalDevices updateMedicalDevices, Locale locale) {
         var medicalDevices = changesMedicalDevices(repository.findById(id).get(), updateMedicalDevices);
         return repository.save(medicalDevices).withComment(config.getProperty());
     }

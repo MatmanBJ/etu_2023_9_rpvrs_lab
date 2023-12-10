@@ -29,11 +29,11 @@ public class MedicalDevicesControllers {
                         .getMedicalDevices(id, locale))
                         .withSelfRel(),
                 linkTo(methodOn(MedicalDevicesControllers.class)
-                        .createMedicalDevices(medicalDevices))
+                        .createMedicalDevices(medicalDevices, locale))
                         .withRel(String.format(messages.getMessage(
                                 "medical.hateoas.create.message", null, locale))),
                 linkTo(methodOn(MedicalDevicesControllers.class)
-                        .updateMedicalDevices(id, medicalDevices))
+                        .updateMedicalDevices(id, medicalDevices, locale))
                         .withRel(String.format(messages.getMessage(
                                 "medical.hateoas.update.message", null, locale))),
                 linkTo(methodOn(MedicalDevicesControllers.class)
@@ -45,19 +45,20 @@ public class MedicalDevicesControllers {
     }
 
     @PostMapping
-    public ResponseEntity<MedicalDevices> createMedicalDevices(@RequestBody MedicalDevices medicalDevices){
-        return ok(service.createMedicalDevices(medicalDevices));
+    public ResponseEntity<MedicalDevices> createMedicalDevices(@RequestBody MedicalDevices medicalDevices,
+                                                               @RequestHeader(value = "Accept-Language", required = false)Locale locale){
+        return ok(service.createMedicalDevices(medicalDevices, locale));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<MedicalDevices> updateMedicalDevices(@PathVariable("id") int id,
-                                       @RequestBody MedicalDevices medicalDevices){
-        return ok(service.updateMedicalDevices(id, medicalDevices));
+                                                               @RequestBody MedicalDevices medicalDevices, @RequestHeader(value = "Accept-Language", required = false)Locale locale){
+        return ok(service.updateMedicalDevices(id, medicalDevices, locale));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteById(@PathVariable("id") int id,
-                             @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
+                                             @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
         return ok(service.deleteById(id, locale));
     }
 
