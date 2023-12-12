@@ -505,6 +505,15 @@
 					"response": []
 				},
 				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8071/medical/test"
+					},
+					"response": []
+				},
+				{
 					"name": "default",
 					"request": {
 						"method": "GET",

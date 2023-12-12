@@ -823,6 +823,25 @@
 					"response": []
 				},
 				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8071/medical/test",
+							"host": [
+								"localhost"
+							],
+							"port": "8071",
+							"path": [
+								"medical",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "default",
 					"request": {
 						"method": "GET",
