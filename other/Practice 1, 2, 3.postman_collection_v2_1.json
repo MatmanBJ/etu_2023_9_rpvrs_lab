@@ -1,0 +1,989 @@
+{
+	"info": {
+		"_postman_id": "8f9d8916-50eb-4d57-9ad5-1a4e50d3b7b7",
+		"name": "Practice 1, 2, 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31240289"
+	},
+	"item": [
+		{
+			"name": "crud",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/devices/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 4,\n    \"holterMonitor\": 4,\n    \"glucoseSensor\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/devices",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 13,\n    \"holterMonitor\": 13,\n    \"glucoseSensor\": 13\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/devices/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/devices/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "actuator",
+			"item": [
+				{
+					"name": "first",
+					"item": [
+						{
+							"name": "actuator",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "health",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/health",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"health"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/info",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "second",
+					"item": [
+						{
+							"name": "metrics",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/metrics",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"metrics"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "metrics-cpu",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/metrics/system.cpu.count",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"metrics",
+										"system.cpu.count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "metrics-http-one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/metrics/http.server.requests.active",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"metrics",
+										"http.server.requests.active"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "metrics-http-all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/metrics/http.server.requests",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"metrics",
+										"http.server.requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "metrics-start",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/metrics/application.started.time",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"metrics",
+										"application.started.time"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "beans",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/beans",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"beans"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "env",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/actuator/env",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"env"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "crud-lang",
+			"item": [
+				{
+					"name": "en",
+					"item": [
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/devices/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 4,\n    \"holterMonitor\": 4,\n    \"glucoseSensor\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 13,\n    \"holterMonitor\": 13,\n    \"glucoseSensor\": 13\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/devices/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "fr",
+					"item": [
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "fr",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/devices/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "fr",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 4,\n    \"holterMonitor\": 4,\n    \"glucoseSensor\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "fr",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 13,\n    \"holterMonitor\": 13,\n    \"glucoseSensor\": 13\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "fr",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/devices/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ru",
+					"item": [
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ru",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/devices/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ru",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 4,\n    \"holterMonitor\": 4,\n    \"glucoseSensor\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ru",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 13,\n    \"holterMonitor\": 13,\n    \"glucoseSensor\": 13\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ru",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/devices/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "default",
+					"item": [
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/devices/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 4,\n    \"holterMonitor\": 4,\n    \"glucoseSensor\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rectalThermometer\": 4,\n    \"pressureMeter\": [\n        4,\n        4\n    ],\n    \"heartRateMonitor\": 13,\n    \"holterMonitor\": 13,\n    \"glucoseSensor\": 13\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/devices/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cloud",
+			"item": [
+				{
+					"name": "dev",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8071/medical/dev",
+							"host": [
+								"localhost"
+							],
+							"port": "8071",
+							"path": [
+								"medical",
+								"dev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8071/medical/prod",
+							"host": [
+								"localhost"
+							],
+							"port": "8071",
+							"path": [
+								"medical",
+								"prod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "default",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8071/medical/default",
+							"host": [
+								"localhost"
+							],
+							"port": "8071",
+							"path": [
+								"medical",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/actuator/refresh",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "crud-db",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ru",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/devices/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"rectalThermometer\": 2, \n    \"lowPressureMeter\": 2, \n    \"upPressureMeter\": 2, \n    \"heartRateMonitor\": 1, \n    \"holterMonitor\": 1, \n    \"glucoseSensor\": 1 \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/devices",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "fr",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"rectalThermometer\": 2, \n    \"lowPressureMeter\": 2, \n    \"upPressureMeter\": 2, \n    \"heartRateMonitor\": 13, \n    \"holterMonitor\": 13, \n    \"glucoseSensor\": 13 \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/devices/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/devices/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

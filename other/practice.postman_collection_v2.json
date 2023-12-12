@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "a86a2db8-0f89-40be-be97-bb4a7b33f4a3",
+		"name": "practice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31240289"
+	},
+	"item": [
+		{
+			"name": "crud",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/devices/2"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "fr",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"rectalThermometer\": 2, \n    \"lowPressureMeter\": 2, \n    \"upPressureMeter\": 2, \n    \"heartRateMonitor\": 1, \n    \"holterMonitor\": 1, \n    \"glucoseSensor\": 1 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/devices"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ru",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"rectalThermometer\": 12, \n    \"lowPressureMeter\": 12, \n    \"upPressureMeter\": 12, \n    \"heartRateMonitor\": 1, \n    \"holterMonitor\": 1, \n    \"glucoseSensor\": 1 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/devices/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": "localhost:8080/devices/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "actuator",
+			"item": [
+				{
+					"name": "first",
+					"item": [
+						{
+							"name": "actuator",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/actuator"
+							},
+							"response": []
+						},
+						{
+							"name": "health",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/actuator/health"
+							},
+							"response": []
+						},
+						{
+							"name": "info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/actuator/info"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "second",
+					"item": [
+						{
+							"name": "metrics",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/actuator/metrics/system.cpu.count"
+							},
+							"response": []
+						},
+						{
+							"name": "beans",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/actuator/beans"
+							},
+							"response": []
+						},
+						{
+							"name": "env",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/actuator/env"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cloud",
+			"item": [
+				{
+					"name": "dev",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8071/medical/default"
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:8080/actuator/refresh"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
